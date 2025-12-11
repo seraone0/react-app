@@ -5,6 +5,10 @@ function App() {
     return (
         <div className="App">
             <PostItem />
+            <PostItem />
+            <PostItem />
+            <PostItem />
+            <PostItem />
         </div>
     );
 }
