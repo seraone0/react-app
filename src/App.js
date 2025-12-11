@@ -2,6 +2,7 @@
 import './styles/app.css'
 import PostList from './components/PostList';
 import MyButton from './components/UI/button/MyButton';
+import MyInput from './components/UI/input/MyInput';
 function App() {
     const [posts, setPosts] = useState([
             { id: 1, title: 'JavaScript', body: 'Description' },
@@ -9,23 +10,28 @@ function App() {
             { id: 3, title: 'JavaScript 3', body: 'Description' },
         ])
 
-    const [posts2, setPosts2] = useState([
-        { id: 1, title: 'python', body: 'Description' },
-        { id: 2, title: 'python 2', body: 'Description' },
-        { id: 3, title: 'python 3', body: 'Description' },
-    ])
+    const [title, setTitle] = useState('')
+
+    const addNewPost = (e) => {
+        e.preventDefault()
+        console.log(title)
+    }
 
     return (
         <div className="App">
             <form>
-                <input type='text' placeholder='Post name' />
-                <input type='text' placeholder='Post description' />
-                <MyButton>
+                <MyInput
+                    value={title}
+                    onChange={e => setTitle(e.target.value)}
+                    type='text'
+                    placeholder='Post name'
+                />
+                <MyInput type='text' placeholder='Post description' />
+                <MyButton onClick={addNewPost}>
                     Create post
                 </MyButton>
             </form>
             <PostList posts={posts} title='Пост про JS' />
-            <PostList posts={posts2} title='Пост про Python' />
         </div>
     );
 }
