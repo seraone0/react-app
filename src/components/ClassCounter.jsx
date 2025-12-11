@@ -6,33 +6,28 @@ class ClassCounter extends React.Component {
         this.state = {
             count: 0
         }
-    }
-    
-    
+        this.increment = this.increment.bind(this)
+        this.dicrement = this.dicrement.bind(this)
 
-    
+    }
 
     increment() {
-        setCount(count  + 1)
-  };
+        this.setState({count: this.state.count + 1})
+    };
 
     dicrement() {
-        setCount(count - 1)
-  }
+        this.setState({count: this.state.count - 1})
+    }
   
   render(){
         return(
             <div>
-                <h1>{count }</h1>
-                <button onClick={increment}>Increment</button>
-                <button onClick={dicrement}>dicrement</button>
+                <h1>{this.state.count }</h1>
+                <button onClick={this.increment}>Increment</button>
+                <button onClick={this.dicrement}>dicrement</button>
             </div>
         )
     }
 }
 
-multiplication = firstNumber * secondNumber
-division = firstNumber / secondNumber
-
-print('multiplication: ' + multiplication + ...)
-print('division: ' + division + ...)
+export default ClassCounter;
