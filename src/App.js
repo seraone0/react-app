@@ -6,9 +6,6 @@ function App() {
         <div className="App">
             <PostItem />
             <PostItem />
-            <PostItem />
-            <PostItem />
-            <PostItem />
         </div>
     );
 }
